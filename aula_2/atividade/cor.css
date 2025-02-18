@@ -1,0 +1,27 @@
+p{
+    font-size: 40pt;
+}
+
+.tag_agua{
+    color:rgb(0, 195, 255);
+}
+
+.tag_agua:HOVER{
+    color:#0026ff;
+}
+
+#fada{
+    color:palevioletred
+}
+
+#fada:hover{
+    color:rgb(255, 9, 161)
+}
+
+div p{
+    color:rgb(112, 37, 173);
+}
+
+div p:hover{
+    color:rgb(0, 223, 37);
+}
