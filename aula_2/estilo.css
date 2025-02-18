@@ -1,0 +1,28 @@
+p{
+    color:chocolate;
+    font-size: 18pt;
+}
+
+h1{
+    color:hotpink;
+}
+
+#p1{
+    color:cyan;
+}
+
+.tag_amarela{
+    color:yellowgreen;
+}
+.tag_green{
+    color:green;
+}
+
+div p{
+    color:cadetblue;
+    font-size: 40pt;
+}
+
+.tag_amarela:HOVER{
+    background-color: #b4dd1e;
+}
