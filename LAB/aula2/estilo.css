@@ -1,0 +1,30 @@
+h1{
+    color:rgb(74, 148, 0);
+    font-family: arial;
+    text-align: center;
+}
+
+h1:hover{
+    color:rgb(0, 148, 136)
+}
+
+body{
+    background-color: #b4dd1ea2;
+}
+
+.tag_verde{
+    text-align: center;
+    font-size: 16pt;
+}
+
+.tag_verde:hover{
+    background-color: rgb(0, 128, 122);
+    color:white;
+}
+
+
+p {
+    border: 2px solid rgb(115, 184, 141);
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+  }
