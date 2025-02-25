@@ -36,7 +36,7 @@ h2{
 #contato{
     border: 5px solid;
     font-size: 20px;
-    font-family: fantasy;
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
     background-color: rgb(21, 255, 0);
     top: 0px;
@@ -48,7 +48,7 @@ h2{
 #contato2{
     border: 5px solid;
     font-size: 20px;
-    font-family: fantasy;
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
     background-color: rgb(21, 255, 0);
     top: 0px;
