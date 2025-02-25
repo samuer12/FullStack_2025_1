@@ -40,3 +40,18 @@
     display: block;
 }
 
+#div_1{
+    display: inline;
+    border: 2px solid rosybrown;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+#div_2{
+    display: inline;
+    border: 2px dashed pink;
+    position: relative;
+    top: 100px;
+    left: 50px;
+}
