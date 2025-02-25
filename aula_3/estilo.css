@@ -55,3 +55,27 @@
     top: 100px;
     left: 50px;
 }
+
+#contato{
+    border: 5px solid;
+    font-size: 40px;
+    font-family: fantasy;
+    background-color: aqua;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+}
+
+#contato2{
+    border: 5px solid;
+    font-size: 40px;
+    font-family: fantasy;
+    background-color: aqua;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+}

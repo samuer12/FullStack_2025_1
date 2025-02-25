@@ -33,3 +33,34 @@ h2{
     color:rgb(74, 148, 0);
     font-family: arial;
 }
+
+#contato{
+    border: 5px solid;
+    font-size: 40px;
+    font-family: fantasy;
+    color: black;
+    background-color: rgb(21, 255, 0);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+}
+
+#contato2{
+    border: 5px solid;
+    font-size: 40px;
+    font-family: fantasy;
+    color: black;
+    background-color: rgb(21, 255, 0);
+    position: fixed;
+    top: 0px;
+    left: 130px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+}
+
+#rodape{
+    background-color: darkgreen;
+    position: fixed;
+}
