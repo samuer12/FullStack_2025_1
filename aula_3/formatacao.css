@@ -1,8 +1,7 @@
 #rodape {
     border: 2px solid;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(0, 52, 100);
+    color: darkgreen;
     background-color: bisque;
     top: 0px;
     left: 130px;
@@ -13,7 +12,6 @@
 #rodapezinho {
     border: 0px solid;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     color: purple;
     background-color: lightblue;
     top: 0px;
