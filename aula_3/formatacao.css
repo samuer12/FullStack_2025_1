@@ -20,9 +20,6 @@
     
 }
 
-#width {
-    position: center;
-}
 
 #formato{
     text-align: center;
@@ -38,5 +35,10 @@ p {
 
 #tabela{
     color: red;
-    left: 50px;
+    height: 100px;
+    display: flex;
+    flex-direction: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
