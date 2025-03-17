@@ -1,13 +1,11 @@
 #rodape {
-    border: 2px solid;
+    border: 2px solid blue; /* Cor da borda azul */
     text-align: center;
-    color: darkgreen;
+    color: darkgreen; /* Cor do texto verde escuro */
     background-color: bisque;
-    top: 0px;
-    left: 130px;
     padding: 40px;
-    
 }
+
 
 #rodapezinho {
     border: 0px solid;
@@ -34,11 +32,39 @@ p {
 }
 
 #tabela{
-    color: red;
     height: 100px;
     display: flex;
     flex-direction: center;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+table {
+    width: 30; /* Tamanho ajustado automaticamente */
+    border: 2px solid red; /* Borda vermelha interna */
+    border-collapse: collapse; /* Colapsa as bordas */
+    text-align: center;
+}
+
+td, th {
+    padding: 8px; /* Espaçamento interno das células */
+    border: 1px solid black; /* Adiciona uma borda de 1px preta nas células */
+}
+
+#bordatabela {
+    border: 5px dotted red;  /* Borda externa pontilhada vermelha */
+    width: 300px;
+}
+
+/* Estilos para as células */
+td {
+    padding: 8px;
+    color: black; /* Texto preto por padrão */
+}
+
+/* Estilo para os títulos da tabela (Nome e Email) em vermelho e negrito */
+tr:first-child td {
+    font-weight: bold;
+    color: red; /* Texto vermelho e negrito para o cabeçalho */
 }
 
