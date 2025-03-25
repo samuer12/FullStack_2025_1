@@ -18,13 +18,29 @@ function ex2() {
     if (numcustom > num) {
         let resposta2 = "DICA: Tente um menor!";
         document.getElementById("dica").innerHTML=resposta2;
+        document.getElementById("numero").style.setProperty("background-color", "red");
     } else if (numcustom < num) {
         let resposta2 = "DICA: Tente um maior!";
         document.getElementById("dica").innerHTML=resposta2;
+        document.getElementById("numero").style.setProperty("background-color", "red");
     } else {
         let resposta2 = "PARABÉNS !";
         document.getElementById("dica").innerHTML=resposta2;
+        document.getElementById("numero").style.setProperty("background-color", "green");
     }
 }
 
 
+if (numcustom > num) {
+    let resposta2 = "DICA: Tente um menor!";
+    document.getElementById("dica").innerHTML=resposta2;
+    document.getElementById("numero").style.setProperty("background-color", "red");
+} else if (numcustom < num) {
+    let resposta2 = "DICA: Tente um maior!";
+    document.getElementById("dica").innerHTML=resposta2;
+    document.getElementById("numero").style.setProperty("background-color", "red");
+} else {
+    let resposta2 = "PARABÉNS !";
+    document.getElementById("dica").innerHTML=resposta2;
+    document.getElementById("numero").style.setProperty("background-color", "green");
+}
