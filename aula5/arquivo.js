@@ -4,7 +4,7 @@ function imprimeMensagem(msg){
 
 
 let numcustom = prompt("Digite um número!")
-let num = Math.floor(Math.random() * 20);
+let num = Math.floor(Math.random() * 100);
 imprimeMensagem (num) 
 
 let resposta = "Você tentou: " + numcustom;
