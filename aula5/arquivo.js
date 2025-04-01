@@ -2,7 +2,7 @@ function imprimeMensagem(msg){
     console.log(msg);
 }
 
-
+let numcustom = prompt("Digite um número!")
 let num = Math.floor(Math.random() * 100);
 imprimeMensagem (num) 
 
