@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^5.1.0",
+    "save": "^2.9.0"
+  },
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "servidor owo",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuer12/FullStack_2025_1.git"
+  },
+  "author": "samuel antonioli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuer12/FullStack_2025_1/issues"
+  },
+  "homepage": "https://github.com/samuer12/FullStack_2025_1#readme"
+}
