@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resposta</title>
+</head>
+<body>
+    <h1><%= mensagem %></h1>
+    <% if (nome && login && nasc) { %>
+        <p>Nome: <%= nome %></p>
+        <p>Login: <%= login %></p>
+        <p>Nascimento: <%= nasc %></p>
+    <% } %>
+    <a href="/">Voltar</a>
+</body>
+</html>
