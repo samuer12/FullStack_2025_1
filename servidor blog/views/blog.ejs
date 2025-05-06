@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+    <h1>Blog</h1>
+    
+    <a href="/cadastrar_post.html">
+        <button>Criar Novo Post</button>
+    </a>
+    
+    <div class="posts">
+        <% if (posts.length > 0) { %>
+            <% posts.forEach(post => { %>
+                <div class="post">
+                    <h3><%= post.title %></h3>
+                    <p class="summary"><%= post.summary %></p>
+                    <p class="content"><%= post.content %></p>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>Nenhum post encontrado.</p>
+        <% } %>
+    </div>
+<%- include('partials/footer') %>
