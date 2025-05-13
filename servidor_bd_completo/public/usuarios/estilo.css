@@ -1,0 +1,11 @@
+body{
+    background-color: #b4dd1e;
+    font-family: Arial, Helvetica, sans-serif;
+    align-self: center;
+}
+
+#item_lista{
+    background-color: whitesmoke;
+    padding: 10px;
+    margin: 10px;
+}
