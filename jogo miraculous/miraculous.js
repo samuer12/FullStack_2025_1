@@ -166,12 +166,10 @@ function desenhar() {
   if (fimDeJogo) {
     ctx.font = '40px Fantasy';
 
-    if (pontos = 50) {
-      // Se o jogador perder
-      ctx.fillText('Você ganhou !', canvas.width / 2 - 100, canvas.height / 2);
+    if (pontos < 50) {
+      ctx.fillText('Você perdeu !', canvas.width / 2 - 100, canvas.height / 2);
     } else {
-      // Se o jogador ganhar
-      ctx.fillText('Você perdeu!', canvas.width / 2 - 100, canvas.height / 2);
+      ctx.fillText('Você ganhou !', canvas.width / 2 - 100, canvas.height / 2);
     }
   }
 }
