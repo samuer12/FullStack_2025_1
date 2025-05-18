@@ -1,10 +1,13 @@
+
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
+// musica
 const audio = new Audio('sprites/musica.mp3');
 audio.loop = true;
 audio.volume = 1;
 
+// sprites
 const sprites = {
   normal: carregarImagem('sprites/normal.png'),
   anda: carregarImagem('sprites/corre.png'),
@@ -19,6 +22,7 @@ function carregarImagem(src) {
   return img;
 }
 
+// jogador
 const jogador = {
   x: 50,
   y: canvas.height / 1.3,
@@ -26,17 +30,21 @@ const jogador = {
   altura: 70,
   velocidade: 5,
   isYoyo: false,
-  sprite: sprites.normal
+  sprite: sprites.normal,
+  movendoEsquerda: false,
+  movendoDireita: false
 };
 
+// sistemas do jogfo
 let inimigos = [];
 let velocidadeInimigo = 2;
 let vidas = 5;
 let pontos = 0;
 let nivel = 1;
 let fimDeJogo = false;
-const teclasPressionadas = {};
 
+
+// inimigos
 function criarInimigo() {
   const x = Math.random() > 0.5 ? canvas.width : 0;
   const y = Math.random() * canvas.height;
@@ -44,13 +52,15 @@ function criarInimigo() {
 
   inimigos.push({
     x, y,
-    largura: 30, altura: 30,
+    largura: 30,
+    altura: 30,
     velocidadeX: velocidadeInimigo * Math.cos(angulo),
     velocidadeY: velocidadeInimigo * Math.sin(angulo),
     sprite: sprites.akuma
   });
 }
 
+// colisao
 function verificarColisao(a, b) {
   return a.x < b.x + b.largura &&
          a.x + a.largura > b.x &&
@@ -61,21 +71,22 @@ function verificarColisao(a, b) {
 function atualizar() {
   if (fimDeJogo) return;
 
-  if (pontos >= 40) { nivel = 4; velocidadeInimigo = 5; }
-  else if (pontos >= 30) { nivel = 3; velocidadeInimigo = 4; }
-  else if (pontos >= 20) { nivel = 2; velocidadeInimigo = 3; }
+  // niveis
+  nivel = Math.floor(pontos / 10) + 1;
+  velocidadeInimigo = Math.min(2 + nivel, 5);
 
-  if (teclasPressionadas['a']) jogador.x = Math.max(0, jogador.x - jogador.velocidade);
-  if (teclasPressionadas['d']) jogador.x = Math.min(canvas.width - jogador.largura, jogador.x + jogador.velocidade);
+  // movimento
+  if (jogador.movendoEsquerda) jogador.x = Math.max(0, jogador.x - jogador.velocidade);
+  if (jogador.movendoDireita) jogador.x = Math.min(canvas.width - jogador.largura, jogador.x + jogador.velocidade);
 
+
+
+  // inimigos
   inimigos.forEach((inimigo, i) => {
-    const angulo = Math.atan2(jogador.y - inimigo.y, jogador.x - inimigo.x);
-    inimigo.velocidadeX = velocidadeInimigo * Math.cos(angulo);
-    inimigo.velocidadeY = velocidadeInimigo * Math.sin(angulo);
-
     inimigo.x += inimigo.velocidadeX;
     inimigo.y += inimigo.velocidadeY;
 
+    // colisão com jogador
     if (verificarColisao(jogador, inimigo)) {
       inimigos.splice(i, 1);
       jogador.isYoyo ? pontos++ : vidas--;
@@ -90,47 +101,61 @@ function atualizar() {
     }
   });
 
+  // spawn de inimigo
   if (Math.random() < 0.02) criarInimigo();
 
+  // vitroia
   if (pontos >= 50) fimDeJogo = true;
 }
+
 
 function desenhar() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(sprites.fundo, 0, 0, canvas.width, canvas.height);
 
+  // yoyo
   jogador.sprite = jogador.isYoyo ? sprites.yoyo :
-                   (teclasPressionadas['a'] || teclasPressionadas['d']) ? sprites.anda :
+                   jogador.movendoEsquerda || jogador.movendoDireita ? sprites.anda :
                    sprites.normal;
 
   ctx.drawImage(jogador.sprite, jogador.x, jogador.y, jogador.largura, jogador.altura);
 
+  // inimigo
   inimigos.forEach(inimigo => {
     ctx.drawImage(inimigo.sprite, inimigo.x, inimigo.y, inimigo.largura, inimigo.altura);
   });
 
+  // interface
   ctx.fillStyle = 'red';
   ctx.font = '20px Fantasy';
   ctx.fillText(`Vidas: ${vidas}`, 10, 20);
   ctx.fillText(`Pontos: ${pontos}`, 10, 40);
   ctx.fillText(`Nivel: ${nivel}`, 10, 60);
 
+  // resultados
   if (fimDeJogo) {
     ctx.font = '40px Fantasy';
     ctx.fillText(pontos < 50 ? 'Você perdeu!' : 'Você ganhou!', canvas.width / 2 - 100, canvas.height / 2);
   }
 }
 
+// jogo
 function loopPrincipal() {
   atualizar();
   desenhar();
-  if (!fimDeJogo) {
-    requestAnimationFrame(loopPrincipal);
-  }
+  if (!fimDeJogo) requestAnimationFrame(loopPrincipal);
 }
 
-document.addEventListener('keydown', e => teclasPressionadas[e.key.toLowerCase()] = true);
-document.addEventListener('keyup', e => teclasPressionadas[e.key.toLowerCase()] = false);
+
+document.addEventListener('keydown', e => {
+  if (e.key.toLowerCase() === 'a') jogador.movendoEsquerda = true;
+  if (e.key.toLowerCase() === 'd') jogador.movendoDireita = true;
+});
+
+document.addEventListener('keyup', e => {
+  if (e.key.toLowerCase() === 'a') jogador.movendoEsquerda = false;
+  if (e.key.toLowerCase() === 'd') jogador.movendoDireita = false;
+});
 
 canvas.addEventListener('click', () => {
   if (!jogador.isYoyo) {
