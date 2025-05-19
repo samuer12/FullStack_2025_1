@@ -50,7 +50,7 @@ canvas {
   margin: 20px 0;
   font-size: 48px;
   color: white;
-  font-family: 'Lobster', sans-serif; /* Fonte personalizada correta */
+  font-family: 'Lobster', sans-serif;
   text-transform: uppercase;
   text-shadow: 2px 2px 5px black;
 }
