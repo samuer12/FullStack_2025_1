@@ -51,6 +51,7 @@ canvas {
   font-size: 48px;
   color: white;
   font-family: 'Lobster', sans-serif;
+  -webkit-text-stroke: 0.1px black; /* Borda preta de 4px */
   text-transform: uppercase;
   text-shadow: 2px 2px 5px black;
 }
